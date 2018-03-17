@@ -1,0 +1,24 @@
+https://sananda.signin.aws.amazon.com/console
+login:Root Account:Sananda,Account:anirban,Password:Sunny0707#
+
+RDB settings:
+DB instance identifier: mydbinstance
+Master username: root
+Password: password
+Database Name:learn2gether
+Database port:3306
+
+Installing JDK
+----------------------
+yum install java-sdk-1.8.0
+which java
+sudo nano /etc/environment {add the line given below }
+JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.36.amzn1.x86_64/"
+
+
+Maven installation
+---------------------------------------------
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+sudo yum install -y apache-maven
+mvn --version
