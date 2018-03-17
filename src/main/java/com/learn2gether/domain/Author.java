@@ -1,14 +1,25 @@
 package com.learn2gether.domain;
 
-/**
- * Created by jt on 1/26/16.
- */
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Author {
+	
+	@Id @GeneratedValue	
     private Integer id;
     private String firstName;
     private String lastName;
     private String image;
-
+    private String email;
+    
+    @OneToMany
+    private List<Course> courseList;
+    
     public Integer getId() {
         return id;
     }
@@ -40,4 +51,22 @@ public class Author {
     public void setImage(String image) {
         this.image = image;
     }
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public List<Course> getCourseList() {
+		return courseList;
+	}
+
+	public void setCourseList(List<Course> courseList) {
+		this.courseList = courseList;
+	}
+    
+    
 }

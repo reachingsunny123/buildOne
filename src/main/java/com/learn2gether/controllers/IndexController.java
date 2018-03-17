@@ -27,4 +27,29 @@ public class IndexController {
 
         return "index";
     }
+    
+    @RequestMapping("/about-us")
+    public String showAboutUs(Model model){
+
+        model.addAttribute("products", productService.listProducts());
+
+        return "about-us";
+    }
+    
+    @RequestMapping("/articles")
+    public String showArticles(Model model){
+
+        model.addAttribute("products", productService.listProducts());
+
+        return "articles";
+    }
+    
+    @RequestMapping("/contact-us")
+    public String showContactUs(Model model){
+
+        model.addAttribute("products", productService.listProducts());
+
+        return "contact-us";
+    }
+
 }
