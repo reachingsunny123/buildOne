@@ -22,3 +22,45 @@ sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-mav
 sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 sudo yum install -y apache-maven
 mvn --version
+
+
+Node configurations and installations in server EC2:
+------------------------------------------------------
+https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-1-d67367ac5171
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+nvm ls
+source ~/.bashrc
+nvm install 7
+node --version
+npm install -g @angular/cli
+npm install --------------> inside the Angular project root folder (this will install all the node_modules)
+npm install --save express body-parser (may not be required)
+ng build --prod
+node server.js > stdout.txt 2> stderr.txt &
+
+
+Router installation
+-----------------------------------------------------
+sudo yum install httpd
+cd /etc/httpd/conf
+vi httpd.conf
+
+<VirtualHost *:80>
+	ServerName learn2gether.co.in
+	ProxyRequests Off
+	ProxyPreserveHost On
+	AllowEncodedSlashes NoDecode
+	ProxyPass / http://localhost:3000/ nocanon
+	ProxyPassReverse / http://localhost:3000
+	ProxyPassReverse / http://learn2gether.co.in
+	<Proxy http://loclhost:3000/* >
+	 Order deny,allow
+	 Allow from all
+	</Proxy>
+</VirtualHost>	
+
+sudo service httpd start
+
+
+

@@ -41,7 +41,7 @@ import com.learn2gether.dao.CourseRepository;
 import com.learn2gether.domain.Course;
 
 
-@CrossOrigin
+
 @RestController
 public class CourseController {
 	
@@ -53,12 +53,14 @@ public class CourseController {
 	@Autowired
 	private CourseRepository courseRepository;
 	
+	@CrossOrigin
 	@RequestMapping(value="/courses", method=RequestMethod.POST)
 	public Course createCourse(@RequestBody Course course){
 		courseRepository.save(course);
 		return course;
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value="/courses", method=RequestMethod.GET)
 	public  List<Course> createCourse(){
 		return (List<Course>) courseRepository.findAll();
