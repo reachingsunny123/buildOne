@@ -53,14 +53,14 @@ public class CourseController {
 	@Autowired
 	private CourseRepository courseRepository;
 	
-	@CrossOrigin
+	@CrossOrigin(origins = {"http://localhost:3000","http://localhost:4200", "http://learn2gether.co.in"})
 	@RequestMapping(value="/courses", method=RequestMethod.POST)
 	public Course createCourse(@RequestBody Course course){
 		courseRepository.save(course);
 		return course;
 	}
 	
-	@CrossOrigin
+	@CrossOrigin(origins = {"http://localhost:3000","http://localhost:4200", "http://learn2gether.co.in"})
 	@RequestMapping(value="/courses", method=RequestMethod.GET)
 	public  List<Course> createCourse(){
 		return (List<Course>) courseRepository.findAll();

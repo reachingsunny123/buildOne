@@ -62,5 +62,7 @@ vi httpd.conf
 
 sudo service httpd start
 
+http://www.briansjavablog.com/2016/05/spring-boot-angular-amazon-web-services.html
+
 
 
