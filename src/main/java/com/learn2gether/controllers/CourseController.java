@@ -62,10 +62,10 @@ public class CourseController {
 	
 	@CrossOrigin(origins = {"http://localhost:3000","http://localhost:4200", "http://learn2gether.co.in"})
 	@RequestMapping(value="/courses", method=RequestMethod.GET)
-	public  List<Course> createCourse(){
+	public  List<Course> findAllCourses(){
 		return (List<Course>) courseRepository.findAll();
 	}
-	
+
 	@RequestMapping(value = "/api/upload", headers=("content-type=multipart/*"), method = RequestMethod.POST)
      public ResponseEntity<?> uploadFile(
             @RequestParam("single") MultipartFile uploadfile) {

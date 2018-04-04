@@ -31,9 +31,10 @@ https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-pa
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 nvm ls
 source ~/.bashrc
-nvm install 7
+nvm install 8.9 (nvm use 8.9 -> to use the version)
 node --version
-npm install -g @angular/cli
+npm install -g @angular/cli@latest
+npm install @angular/cli@latest -------> inside project
 npm install --------------> inside the Angular project root folder (this will install all the node_modules)
 npm install --save express body-parser (may not be required)
 ng build --prod
@@ -62,7 +63,15 @@ vi httpd.conf
 
 sudo service httpd start
 
-http://www.briansjavablog.com/2016/05/spring-boot-angular-amazon-web-services.html
+	
+java -Dspring.application.json='{"database-name": "rds_demo","db-instance-identifier": "rds-demo","rdsPassword": "rds-sample-db","accessKey": "XXXXXXXXXXXXXXXX","secretKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}' -jar target/spring-boot-aws-0.1.0.jar
 
+
+
+http://www.briansjavablog.com/2016/05/spring-boot-angular-amazon-web-services.html
+http://javasampleapproach.com/spring-framework/spring-cloud/amazon-s3-uploaddownload-files-springboot-amazon-s3-application
+http://www.briansjavablog.com/2015/11/micro-services-introduction_11.html
+
+http://javaonfly.blogspot.in/2018/03/file-upload-angular4-microservice.html?utm_source=dlvr.it&utm_medium=facebook
 
 

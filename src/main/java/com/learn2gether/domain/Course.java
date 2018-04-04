@@ -22,8 +22,8 @@ public class Course{
     private String description;
     private BigDecimal price;
     
-    @ManyToMany
-    private List<Category> categoryList;
+    //@ManyToMany
+    //private List<Category> categoryList;
     
     @ManyToOne
     private Author author;
@@ -52,12 +52,12 @@ public class Course{
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-	public List<Category> getCategoryList() {
+	/*public List<Category> getCategoryList() {
 		return categoryList;
 	}
 	public void setCategoryList(List<Category> categoryList) {
 		this.categoryList = categoryList;
-	}
+	}*/
 	public Author getAuthor() {
 		return author;
 	}
